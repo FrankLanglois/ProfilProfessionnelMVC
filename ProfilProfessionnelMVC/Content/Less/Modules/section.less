@@ -1,0 +1,69 @@
+﻿@import "variables";
+@import "mixins";
+
+// Global Section Styles
+section {
+    padding-top: 100px;
+        
+    h2.section-heading {
+        font-size: 40px;
+        margin-top: 0;
+        margin-bottom: 15px;
+    }
+
+    h3.section-subheading {
+        font-size: 16px;
+        .serif-font;
+        text-transform: none;
+        font-style: italic;
+        font-weight: 400;
+        margin-bottom: 40px;
+    }
+}
+
+// Services Section
+
+.service-heading {
+    margin: 15px 0;
+    text-transform: none;
+}
+
+// Media Queries
+
+@media (min-width: 320px) and (max-width: 767px) {
+    section {
+        font-size: xx-small;
+        padding-top: 65px;
+
+        h2.section-heading {
+            font-size: 20px;
+            margin-bottom: 0;
+        }
+
+        h3.section-subheading {
+            font-size: 12px;
+            margin-bottom: 0;
+        }
+
+        p {
+            font-size: small;
+        }
+
+        .portfolio-hover-content {
+            display: inline-flex;
+        }
+
+        .cv-company {
+            margin: 3px 0 0 45px;
+            color: @gray-darker;
+        }
+    }
+}
+
+@media (min-width: 767px) {
+    #portfolio {
+        .portfolio-item {
+            margin: 0 0 30px;
+        }
+    }
+}

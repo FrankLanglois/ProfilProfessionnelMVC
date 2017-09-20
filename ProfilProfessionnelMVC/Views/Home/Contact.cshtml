@@ -1,17 +1,42 @@
-﻿@{
+﻿@model  ProfilProfessionnelMVC.Models.Mail
+
+@{
     ViewBag.Title = "Contact";
+    ViewBag.ID = "Contact";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
+<section>
+    <h3>Contact Me</h3>
+    @using( Html.BeginForm( "Contact", "Home", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @id = "contact-form", role = "form" } ) )
+    {
+        @Html.ValidationSummary()
+        <fieldset>
+            <div class="form-div-1">
+                <label class="name">
+                    @Html.TextBoxFor( m => m.Name, new { @placeholder = "Name", @type = "text" } )*
+                </label>
+            </div>
+            <div class="form-div-2">
+                <label class="email">
+                    @Html.TextBoxFor( m => m.Email, new { @placeholder = "Email Address", @type = "email" } )*
+                </label>
+            </div>
+            <div class="form-div-3">
+                <label class="phone notRequired">
+                    @Html.TextBoxFor( m => m.Telephone, new { @placeholder = "Telephone Number", @type = "text" } )
+                </label>
+            </div>
+            <div>
+                <label class="message">
+                    @Html.TextAreaFor( m => m.Message, new { @placeholder = "Message" } )*
+                </label>
+            </div>
+            <div class="button-wrapper">
+                <input type="submit" value="Send" name="submit" class="button"> 
+                <input type="reset" value="Reset" name="MFReset" class="button">
+                <span>* Required Fields</span>
+            </div>
+        </fieldset>
+    }
+</section>
 
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>

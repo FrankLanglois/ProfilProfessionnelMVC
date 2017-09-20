@@ -1,0 +1,140 @@
+﻿@import "variables";
+@import "mixins";
+
+body {
+    overflow-x: hidden;
+    .body-font;
+    background-image: url(../../../Images/header-bg.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding: 15px;
+    background-color: rgba(221, 221, 221, 0.95);
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+p {
+    font-size: 14px;
+    line-height: 1.75;
+}
+
+p.large {
+    font-size: 16px;
+}
+
+hr {
+    border-top: 1px solid lightgrey;
+   
+}
+
+a,
+a:hover,
+a:focus,
+a:active,
+a.active {
+    outline: none;
+}
+
+a {
+    color: @theme-primary;
+}
+
+a:hover,
+a:focus,
+a:active,
+a.active {
+    color: darken(@theme-primary, 10%);
+}
+
+.active {
+    background-color: lighten(@gray-dark,10%);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    .heading-font;
+    font-weight: 700;
+}
+
+.viewport-full-height {
+    min-height: 100vh;   
+}
+
+bg-light-gray {
+    background-color: @gray-lighter;
+}
+
+.bg-darkest-gray {
+    background-color: @gray-darker;
+}
+
+.text-muted {
+    color: @gray-light;
+    margin-left: 10px;
+}
+
+.text-primary {
+    color: @theme-primary;
+}
+
+.img-centered {
+    margin: 0 auto;
+}
+
+// Highlight Color Customization
+
+::-moz-selection {
+    text-shadow: none;
+    background: @theme-primary;
+}
+
+::selection {
+    text-shadow: none;
+    background: @theme-primary;
+}
+
+img::selection {
+    background: transparent;
+}
+
+img::-moz-selection {
+    background: transparent;
+}
+
+.margin-bottom-30 {
+    //border: 1px solid #9c9c9c;
+    margin-bottom: 30px;
+}
+
+.sub-separator {
+    width: 80%;
+}
+
+// Import Modules
+@import "Modules/buttons.less";
+
+@import "Modules/navbar.less";
+
+@import "modules/splashScreen.less";
+
+@import "modules/section";
+
+@import "modules/timeline";
+
+@import "modules/cv";
