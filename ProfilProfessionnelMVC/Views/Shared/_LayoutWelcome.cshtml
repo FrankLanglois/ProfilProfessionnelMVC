@@ -8,68 +8,20 @@
     @Styles.Render( "~/Content/css" )
     @Scripts.Render( "~/bundles/modernizr" )
 </head>
-<body>
-    @*<div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-               
-                <a class="navbar-brand page-scroll text-white" href="/Home">
-                    <div class="fistname">Francois</div>
-                    <div class="lastname">Langlois</div>
-                </a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>@Html.ActionLink( "Qui suis-je", "Index", "Who" )</li>
-                    <li>@Html.ActionLink( "Survol Carrière", "Index", "Overview" )</li>
-                    <li>@Html.ActionLink( "CV", "Index", "CV" )</li>
-                    <li>@Html.ActionLink( "Contact", "Contact", "Home" ))</li>
-                </ul>
-            </div>
-        </div>
-    </div>*@
-    <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-welcome navbar-fixed-top">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span> <i class="fa fa-bars"></i>
-                </button>
-                <a class="navbar-brand page-scroll text-white" href="/Home">
-                    <div class="fistname">Francois</div>
-                    <div class="lastname">Langlois</div>
-                </a>
+<body>   
+    @Html.Partial("_navbarSection")
 
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="hidden">
-                        <a href="#page-top"></a>
-                    </li>
-                    <li>@Html.ActionLink( "Qui suis-je", "Index", "Who", null ,new { @class="page-scroll" }  )</li>
-                    <li>@Html.ActionLink( "Survol Carrière", "Index", "Overview", null, new { @class = "page-scroll" } )</li>
-                    <li>@Html.ActionLink( "CV", "Index", "CV", null, new { @class = "page-scroll" } )</li>
-                    <li>@Html.ActionLink( "Contact", "Contact", "Home", null, new { @class = "page-scroll" } ))</li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
-    </nav>
     <div>
         @RenderBody()       
     </div>
 
     @Scripts.Render( "~/bundles/jquery" )
     @Scripts.Render( "~/bundles/bootstrap" )
-    @Scripts.Render("~/bundles/js")
+    <script>
+        $(function () {
+            $('#mainNav').addClass('navbar-welcome');
+        });
+    </script>
     @RenderSection( "scripts", required: false )
 </body>
 </html>

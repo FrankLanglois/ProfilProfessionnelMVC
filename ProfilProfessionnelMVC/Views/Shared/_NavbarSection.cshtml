@@ -1,0 +1,24 @@
+﻿<nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span> <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand page-scroll text-white" href="/Home">
+                <div class="fistname">Francois</div>
+                <div class="lastname">Langlois</div>
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="hidden">
+                    <a href="#page-top"></a>
+                </li>
+                <li>@Html.ActionLink( "Qui suis-je", "Index", "Who", null, new { @class = "page-scroll", @id = "Who" } )</li>
+                <li>@Html.ActionLink( "Survol Carrière", "Index", "Overview", null, new { @class = "page-scroll", @id = "Overview" } )</li>
+                <li>@Html.ActionLink( "CV", "Index", "CV", null, new { @class = "page-scroll", @id = "CV" } )</li>
+                <li>@Html.ActionLink( "Contact", "Contact", "Home", null, new { @class = "page-scroll", @id = "Contact" } )</li>
+            </ul>
+        </div>
+    </div>
+</nav>
